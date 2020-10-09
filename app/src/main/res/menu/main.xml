@@ -5,4 +5,7 @@
         android:id="@+id/settingmenu"
         android:icon="@drawable/menu_setting"
         android:title="Setting" />
+    <item
+        android:id="@+id/Logout"
+        android:title="Logout" />
 </menu>

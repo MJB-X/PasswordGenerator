@@ -16,14 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class myAdapter extends RecyclerView.Adapter<myAdapter.innerclass> {
-    ArrayList<String > passwords;
+    ArrayList<String> passwords;
+    ArrayList<String> title;
 
 
-
-
-
-    public myAdapter(ArrayList passwords) {
+    public myAdapter(ArrayList passwords, ArrayList title) {
         this.passwords = passwords;
+        this.title = title;
 
     }
 
@@ -31,14 +30,13 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.innerclass> {
     @Override
     public innerclass onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new innerclass(LayoutInflater.from(parent.getContext()).inflate(R.layout.iteam,parent,false));
+        return new innerclass(LayoutInflater.from(parent.getContext()).inflate(R.layout.iteam, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull innerclass holder, int position) {
         holder.panelist.setText(passwords.get(position));
-        
-
+        holder.mtitle.setText(title.get(position));
 
 
     }
@@ -49,14 +47,15 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.innerclass> {
     }
 
     public class innerclass extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView panelist;
+        TextView panelist, mtitle;
         ImageView delete;
 
 
         public innerclass(@NonNull View itemView) {
             super(itemView);
             panelist = itemView.findViewById(R.id.passlist);
-            delete = itemView.findViewById(R.id.delete);
+            mtitle = itemView.findViewById(R.id.mtitle);
+            //delete = itemView.findViewById(R.id.delete);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

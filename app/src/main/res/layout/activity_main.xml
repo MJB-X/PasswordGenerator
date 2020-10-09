@@ -3,89 +3,120 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
 
 
     <EditText
         android:id="@+id/inputN"
-        android:layout_width="197dp"
-        android:layout_height="62dp"
+        android:layout_width="208dp"
+        android:layout_height="44dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter no.of charater to Generate"
         android:inputType="number"
+        android:textColor="#B10101"
+        android:textColorHint="#CDCBCB"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/btngenerate"
-        android:layout_width="106dp"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="45dp"
         android:layout_alignTop="@+id/inputN"
         android:layout_alignBottom="@+id/inputN"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/inputN"
         android:text="Generate"
-        app:layout_constraintBottom_toBottomOf="@+id/inputN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputN"
-        app:layout_constraintTop_toTopOf="@+id/inputN" />
+        app:layout_constraintStart_toStartOf="@+id/inputN"
+        app:layout_constraintTop_toBottomOf="@+id/inputN" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="196dp"
-        android:layout_height="42dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/inputN"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="fill password here"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputN" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="109dp"
-        android:layout_height="31dp"
-        android:layout_below="@+id/inputN"
-        android:layout_alignStart="@+id/password"
-        android:layout_alignEnd="@+id/password"
-        android:text="Your Password"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintHorizontal_bias="0.678"
-        app:layout_constraintStart_toStartOf="@+id/password" />
+        android:textColor="#FF8D8D"
+        android:textColorHint="#8F8F8F"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="79dp"
+        android:layout_height="44dp"
         android:layout_below="@+id/password"
         android:layout_alignStart="@+id/password"
         android:layout_alignEnd="@+id/password"
         android:text="Save"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintBottom_toBottomOf="@+id/btngenerate"
+        app:layout_constraintEnd_toEndOf="@+id/inputN"
+        app:layout_constraintStart_toEndOf="@+id/btngenerate"
+        app:layout_constraintTop_toTopOf="@+id/btngenerate" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="356dp"
+        android:layout_width="0dp"
         android:layout_height="418dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="fill title here"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="#686868"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="80dp"
+        android:layout_height="21dp"
+        android:text="Title"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="#FDFCFC"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
